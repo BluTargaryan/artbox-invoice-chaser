@@ -5,6 +5,7 @@ import "./globals.css";
 const clashDisplay = localFont({
   src: "./assets/fonts/ClashDisplay-Variable.ttf",
   variable: "--font-clash",
+  weight: "400 500 600 700 800",
   display: 'swap',
   preload: true,
 });

@@ -16,6 +16,9 @@
   --color-light-green: var(--light-green);
   --font-clash: var(--font-clash);
   --font-satoshi: var(--font-satoshi);
+
+  --font-clash: var(--font-clash);
+  --font-satoshi: var(--font-satoshi);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -25,8 +28,46 @@
   }
 } */
 
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background: var(--color-light-almond);
   color: var(--color-chill-black);
   font-family: var(--font-satoshi);
+overflow-x: hidden;
+}
+
+input {
+  font-family: var(--font-satoshi);
+  @apply text-chill-black;
+}
+
+input::placeholder {
+  @apply text-chill-black;
+}
+
+input:focus {
+  @apply outline-none;
+}
+
+h1,h2,h3,h4,h5,h6,label {
+  font-family: var(--font-clash);
+  @apply text-calm-green;
+}
+
+label {
+  letter-spacing: 0.07em;
+}
+
+h1 {
+  letter-spacing: 0.07em;
+  @apply text-4xl font-semibold;
+}
+
+h2 {
+  @apply text-3xl font-bold;
 }
