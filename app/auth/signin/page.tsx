@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import CustomInput from "@/app/components/atoms/CustomInput";
+import MiniLink from "@/app/components/atoms/MiniLink";
+import Link from "next/link";
 
 const SignInPage = () => {
   const [email, setEmail] = useState("");
@@ -11,7 +13,7 @@ const SignInPage = () => {
     <>
       <h1 className="w-[270px] text-center">Sign In</h1>
 
-      <div className="w-[270px] flex flex-col items-center justify-center gap-7">
+      <div className="w-[270px] flex flex-col justify-center gap-7">
         <CustomInput
           id="email"
           label="Email"
@@ -31,6 +33,13 @@ const SignInPage = () => {
           autoComplete="current-password"
         />
       </div>
+
+      <div className="flex flex-col items-center justify-center gap-7">
+      <button className="w-[270px] bg-calm-green text-light-green" type="button">
+        Sign In
+      </button>
+      <MiniLink />
+    </div>
     </>
   );
 };

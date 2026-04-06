@@ -71,3 +71,21 @@ h1 {
 h2 {
   @apply text-3xl font-bold;
 }
+
+button {
+  font-family: var(--font-clash);
+  cursor: pointer;
+  font-weight: 500;
+  @apply h-12 rounded-full  border-2 border-chill-black;
+  transition: box-shadow 0.3s ease-in, transform 0.3s ease-in;
+}
+
+button:hover {
+  box-shadow: 3px 3px 0 0 var(--color-chill-black);
+  transform: translate(-3px, -3px);
+  
+}
+
+.base-shadow{
+  box-shadow: 2px 2px 0 0 var(--color-chill-black);
+}

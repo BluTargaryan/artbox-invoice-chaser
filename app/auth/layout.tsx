@@ -17,7 +17,7 @@ export default function AuthLayout({
 
       <div className="flex flex-col relative">
         <AuthHeader />
-        <main className="flex flex-col  py-50 items-center justify-center gap-30">
+        <main className="flex flex-col py-50 items-center justify-center gap-17">
         {children}
    </main>
         <Footer />
