@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const defaultInputClassName =
   "w-full h-12 rounded-full border-2 border-calm-green px-4 bg-light-green text-center text-chill-black";
 
-/** Types that use the default “pill” field look; others rely on `className` or native styling. */
+/** Types that use the default "pill" field look; others rely on `className` or native styling. */
 const USES_DEFAULT_FIELD_STYLES = new Set([
   "text",
   "email",
@@ -25,10 +25,16 @@ function normalizeType(type: React.HTMLInputTypeAttribute | undefined) {
   return String(type ?? "text").toLowerCase();
 }
 
+export type SelectOption = { value: string; label: string };
+
 export type CustomInputProps = {
   label: string;
   placeholder?: string;
   containerClassName?: string;
+  /** Pass `type="select"` together with `options` to render a dropdown. */
+  options?: SelectOption[];
+  /** Called with the chosen option value when the custom dropdown selection changes. */
+  onSelectChange?: (value: string) => void;
 } & React.ComponentPropsWithoutRef<"input">;
 
 export default function CustomInput({
@@ -43,11 +49,14 @@ export default function CustomInput({
   checked,
   defaultChecked,
   onChange,
+  options,
+  onSelectChange,
   ...rest
 }: CustomInputProps) {
   const inputType = normalizeType(type);
   const isCheckLike = inputType === "checkbox" || inputType === "radio";
   const isFile = inputType === "file";
+  const isSelect = inputType === "select";
 
   const [uncontrolledValue, setUncontrolledValue] = useState(() => {
     if (isCheckLike) return "";
@@ -58,8 +67,9 @@ export default function CustomInput({
   );
   const [fileHasSelection, setFileHasSelection] = useState(false);
 
-  const isControlledString = value !== undefined && !isCheckLike && !isFile;
+  const isControlledString = value !== undefined && !isCheckLike && !isFile && !isSelect;
   const isControlledChecked = checked !== undefined && isCheckLike;
+  const isControlledSelect = value !== undefined && isSelect;
 
   const currentString = isControlledString
     ? String(value ?? "")
@@ -67,12 +77,15 @@ export default function CustomInput({
   const currentChecked = isControlledChecked
     ? Boolean(checked)
     : uncontrolledChecked;
+  const currentSelectValue = isControlledSelect ? String(value ?? "") : uncontrolledValue;
 
   const showLabel = isCheckLike
     ? currentChecked
     : isFile
       ? fileHasSelection
-      : currentString.length > 0;
+      : isSelect
+        ? currentSelectValue.length > 0
+        : currentString.length > 0;
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     if (!isControlledString && !isCheckLike && !isFile) {
@@ -87,8 +100,17 @@ export default function CustomInput({
     onChange?.(e);
   }
 
+  function applySelectValue(val: string) {
+    if (!isControlledSelect) setUncontrolledValue(val);
+    onSelectChange?.(val);
+  }
+
   const usesDefaultFieldStyle = USES_DEFAULT_FIELD_STYLES.has(inputType);
   const inputClassName = [usesDefaultFieldStyle ? defaultInputClassName : "", className]
+    .filter(Boolean)
+    .join(" ");
+
+  const selectTriggerClassName = [defaultInputClassName, className]
     .filter(Boolean)
     .join(" ");
 
@@ -97,6 +119,64 @@ export default function CustomInput({
       ? "max-h-8 max-w-[270px] opacity-100"
       : "max-h-0 max-w-0 opacity-0 overflow-hidden whitespace-nowrap"
   }`;
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!dropdownOpen) return;
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [dropdownOpen]);
+
+  if (isSelect) {
+    const selectedLabel = options?.find((o) => o.value === currentSelectValue)?.label;
+
+    return (
+      <div className={containerClassName}>
+        <label htmlFor={id} className={labelClassName}>
+          {label}
+        </label>
+        <div ref={dropdownRef} className="relative w-full">
+          <button
+            id={id}
+            type="button"
+            className={`${selectTriggerClassName} flex items-center justify-between shadow-none! transform-none!`}
+            onClick={() => setDropdownOpen((o) => !o)}
+          >
+            <span className="flex-1 text-center">
+              {selectedLabel ?? (placeholder ?? label)}
+            </span>
+            <span className="ml-2 text-xs">{dropdownOpen ? "▲" : "▼"}</span>
+          </button>
+
+          {dropdownOpen && (
+            <ul className="absolute z-10 mt-1 w-full overflow-hidden rounded-2xl border-2 border-calm-green bg-light-green shadow-md">
+              {options?.map((opt) => (
+                <li
+                  key={opt.value}
+                  className={`cursor-pointer px-6 py-4.5 text-center transition-colors hover:bg-calm-green hover:text-light-green ${
+                    opt.value === currentSelectValue ? "bg-calm-green text-light-green" : ""
+                  }`}
+                  onClick={() => {
+                    applySelectValue(opt.value);
+                    setDropdownOpen(false);
+                  }}
+                >
+                  {opt.label}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   if (isCheckLike) {
     return (
