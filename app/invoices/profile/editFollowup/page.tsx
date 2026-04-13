@@ -16,23 +16,34 @@ const ACTION_OPTIONS = [
   { value: "call", label: "action: call" },
 ];
 
-const FollowupRulesPage = () => {
+const DUMMY_RULES = [
+  { label: "Rule 1", timing: "3 days before" },
+  { label: "Rule 2", timing: "1 day after" },
+];
+
+const EditFollowupPage = () => {
   const [days, setDays] = useState("");
   const [timeframe, setTimeframe] = useState("");
   const [action, setAction] = useState("");
 
   return (
     <>
-      <h1 className="w-[270px] text-center">Define your followup rules</h1>
+      <h1 className="w-[270px] text-center">Edit followup rules</h1>
 
       <div className="flex w-[270px] flex-col justify-center gap-10 py-4">
-        {/* Existing Rule Block */}
+        {/* Existing Rules */}
+
         <div className="flex flex-col gap-4">
-        <div className="relative flex h-12 w-full items-center border-2 border-chill-black bg-calm-green px-4">
-          <div className="absolute bottom-0 left-0 top-0 w-2 border-r-2 border-chill-black bg-tan"></div>
-          <span className="ml-2 font-satoshi text-sm text-light-almond">Rule</span>
-          <span className="ml-auto font-satoshi text-xs text-light-almond">X days before</span>
-        </div>
+        {DUMMY_RULES.map((rule) => (
+          <div
+            key={rule.label}
+            className="relative flex h-12 w-full items-center border-2 border-chill-black bg-calm-green px-4"
+          >
+            <div className="absolute bottom-0 left-0 top-0 w-2 border-r-2 border-chill-black bg-tan"></div>
+            <span className="ml-2 font-satoshi text-sm text-light-almond">{rule.label}</span>
+            <span className="ml-auto font-satoshi text-xs text-light-almond">{rule.timing}</span>
+          </div>
+        ))}
         </div>
 
         {/* New Rule Inputs */}
@@ -81,17 +92,17 @@ const FollowupRulesPage = () => {
 
       <div className="flex flex-col items-center justify-center gap-5 mt-4">
         <button className="w-[270px] bg-calm-green text-light-green" type="button">
-          Set brand voice
+          Save changes
         </button>
         <Link
-          href="/"
+          href="/invoices/profile"
           className="border-b border-chill-black py-1 text-chill-black transition-all duration-300 hover:border-tan hover:text-tan"
         >
-          Skip. I will do this later.
+          Cancel
         </Link>
       </div>
     </>
   );
 };
 
-export default FollowupRulesPage;
+export default EditFollowupPage;

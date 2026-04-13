@@ -19,6 +19,7 @@ const USES_DEFAULT_FIELD_STYLES = new Set([
   "month",
   "week",
   "time",
+  "file",
 ]);
 
 function normalizeType(type: React.HTMLInputTypeAttribute | undefined) {
@@ -203,13 +204,21 @@ export default function CustomInput({
         <label htmlFor={id} className={labelClassName}>
           {label}
         </label>
-        <input
-          {...rest}
-          id={id}
-          type={type}
-          className={inputClassName || undefined}
-          onChange={handleChange}
-        />
+        <div className="relative w-full">
+          <input
+            {...rest}
+            id={id}
+            type="file"
+            className="absolute inset-0 z-10 h-full w-full cursor-pointer opacity-0"
+            onChange={handleChange}
+          />
+          <div className={`${selectTriggerClassName} flex items-center justify-center shadow-none! transform-none!`}>
+            <span className="flex-1 text-center">
+              {fileHasSelection ? "File selected" : (placeholder ?? label)}
+            </span>
+            
+          </div>
+        </div>
       </div>
     );
   }

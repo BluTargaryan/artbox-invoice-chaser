@@ -6,7 +6,7 @@ export default function InvoicesPage() {
     <div className="flex w-full max-w-[350px] flex-col gap-8 px-4">
       {/* Page Header */}
       <div className="flex items-center justify-between">
-        <h1 className="text-4xl text-calm-green">Invoices</h1>
+        <h1>Invoices</h1>
         <button className="rounded-full border-2 border-chill-black bg-calm-green px-5 py-4.5 text-xs font-medium text-light-almond flex items-center justify-center">
           Add invoice
         </button>
