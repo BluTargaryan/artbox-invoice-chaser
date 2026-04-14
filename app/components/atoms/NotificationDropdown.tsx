@@ -28,7 +28,9 @@ const NotificationDropdown = () => {
     <div className="relative" ref={dropdownRef}>
       <button
         type="button"
-        className="flex shadow-none! transform-none! h-10 items-center gap-2 rounded-full border-2 border-chill-black bg-calm-green px-4 text-xs text-light-almond "
+        className="flex shadow-none! transform-none! h-10 items-center gap-2 rounded-full border-2 border-chill-black bg-calm-green px-4 text-xs text-light-almond 
+        md:text-base
+        "
         onClick={() => setDropdownOpen((o) => !o)}
       >
         <span>Notifications</span>
@@ -37,7 +39,9 @@ const NotificationDropdown = () => {
 
       {/* Dropdown Menu */}
       {dropdownOpen && (
-        <div className="absolute right-0 top-full mt-2 w-[240px] border border-chill-black bg-[#FFFBF4] shadow-md">
+        <div className="absolute right-0 top-full mt-2 w-[240px] border border-chill-black bg-[#FFFBF4] shadow-md
+        md:w-[350px]
+        ">
           <ul className="flex flex-col">
             {notifications.map((text, idx) => (
               <li

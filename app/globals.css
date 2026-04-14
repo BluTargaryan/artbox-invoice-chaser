@@ -56,7 +56,7 @@ input:focus {
 
 h1,h2,h3,h4,h5,h6,label {
   font-family: var(--font-clash);
-  @apply text-calm-green;
+  @apply text-calm-green tracking-tight;
 }
 
 label {
@@ -92,4 +92,16 @@ button:hover {
 
 .base-shadow{
   box-shadow: 2px 2px 0 0 var(--color-chill-black);
+}
+
+.outline-black {
+  text-shadow:
+    -1px -1px 0 var(--color-chill-black),
+    0 -1px 0 var(--color-chill-black),
+    1px -1px 0 var(--color-chill-black),
+    -1px 0 0 var(--color-chill-black),
+    1px 0 0 var(--color-chill-black),
+    -1px 1px 0 var(--color-chill-black),
+    0 1px 0 var(--color-chill-black),
+    1px 1px 0 var(--color-chill-black);
 }

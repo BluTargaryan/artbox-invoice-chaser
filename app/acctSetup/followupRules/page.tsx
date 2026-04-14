@@ -23,9 +23,9 @@ const FollowupRulesPage = () => {
 
   return (
     <>
-      <h1 className="w-[270px] text-center">Define your followup rules</h1>
+      <h1 className="w-[270px] text-center md:w-[322px]">Define your followup rules</h1>
 
-      <div className="flex w-[270px] flex-col justify-center gap-10 py-4">
+      <div className="flex w-[270px] flex-col justify-center gap-10 py-4 md:w-[322px]">
         {/* Existing Rule Block */}
         <div className="flex flex-col gap-4">
         <div className="relative flex h-12 w-full items-center border-2 border-chill-black bg-calm-green px-4">
@@ -80,7 +80,7 @@ const FollowupRulesPage = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-5 mt-4">
-        <button className="w-[270px] bg-calm-green text-light-green" type="button">
+        <button className="w-[270px] bg-calm-green text-light-green md:w-[322px]" type="button">
           Set brand voice
         </button>
         <Link

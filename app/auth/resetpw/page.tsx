@@ -9,9 +9,9 @@ const ResetPasswordPage = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   return (
     <>
-      <h1 className="w-[270px] text-center">Reset Password</h1>
+      <h1 className="w-[270px] text-center md:w-[322px]">Reset Password</h1>
 
-      <div className="flex w-[270px] flex-col justify-center gap-5">
+      <div className="flex w-[270px] flex-col justify-center gap-5 md:w-[322px]">
         <CustomInput
           id="password"
           label="Password"
@@ -36,7 +36,7 @@ const ResetPasswordPage = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-5">
-        <button className="w-[270px] bg-calm-green text-light-green" type="button">
+        <button className="w-[270px] bg-calm-green text-light-green md:w-[322px]" type="button">
           Reset Password
         </button>
         <Link

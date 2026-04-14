@@ -20,17 +20,17 @@ function ProfileField({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col gap-0.5">
       <label className="">{label}</label>
-      <p className="font-bold text-calm-green">{value}</p>
+      <p className="wrap-break-word font-bold text-calm-green">{value}</p>
     </div>
   );
 }
 
 export default function ProfilePage() {
   return (
-    <div className="flex w-[270px] flex-col gap-20">
-      <h1 className="text-3xl">Profile</h1>
+    <div className="flex w-full max-w-sm flex-col gap-12 px-4 md:max-w-5xl md:gap-16 md:px-8">
+      <h1 className="text-3xl md:text-4xl">Profile</h1>
 
-      <div className="flex flex-col gap-15">
+      <div className="flex flex-col gap-15 md:grid md:grid-cols-3 md:gap-12">
 {/* User details */}
 <section className="flex flex-col gap-4">
         <h3>User details</h3>
@@ -39,7 +39,7 @@ export default function ProfilePage() {
         <Link href="/invoices/profile/editUser">
           <button
             type="button"
-            className="px-12 h-14 bg-calm-green text-light-green font-clash text-sm"
+            className="h-14 w-full rounded-full border-2 border-chill-black bg-calm-green px-6 font-clash text-sm text-light-green transition-transform hover:-translate-y-0.5 hover:shadow-[2px_2px_0_0_var(--color-chill-black)] md:w-auto"
           >
             Edit user details
           </button>
@@ -54,7 +54,7 @@ export default function ProfilePage() {
         <Link href="/invoices/profile/editBrand">
           <button
             type="button"
-            className="px-12 h-14 bg-calm-green text-light-green font-clash text-sm"
+            className="h-14 w-full rounded-full border-2 border-chill-black bg-calm-green px-6 font-clash text-sm text-light-green transition-transform hover:-translate-y-0.5 hover:shadow-[2px_2px_0_0_var(--color-chill-black)] md:w-auto"
           >
             Edit brand details
           </button>
@@ -70,7 +70,7 @@ export default function ProfilePage() {
         <Link href="/invoices/profile/editFollowup">
           <button
             type="button"
-            className="px-12 h-14 bg-calm-green text-light-green font-clash text-sm"
+            className="h-14 w-full rounded-full border-2 border-chill-black bg-calm-green px-6 font-clash text-sm text-light-green transition-transform hover:-translate-y-0.5 hover:shadow-[2px_2px_0_0_var(--color-chill-black)] md:w-auto"
           >
             Edit followup rules
           </button>

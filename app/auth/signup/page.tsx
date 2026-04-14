@@ -12,9 +12,9 @@ const SignUpPage = () => {
 
   return (
     <>
-      <h1 className="w-[270px] text-center">Sign Up</h1>
+      <h1 className="w-[270px] text-center md:w-[322px]">Sign Up</h1>
 
-      <div className="flex w-[270px] flex-col justify-center gap-5">
+      <div className="flex w-[270px] flex-col justify-center gap-5 md:w-[322px]">
         <CustomInput
           id="fullName"
           label="Full name"
@@ -58,7 +58,7 @@ const SignUpPage = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-5">
-        <button className="w-[270px] bg-calm-green text-light-green" type="button">
+        <button className="w-[270px] bg-calm-green text-light-green md:w-[322px]" type="button">
           Sign Up
         </button>
         <Link

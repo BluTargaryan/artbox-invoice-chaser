@@ -13,10 +13,10 @@ export default function AddInvoicePage() {
   const [automate, setAutomate] = useState(false);
 
   return (
-    <div className="flex w-[270px] flex-col items-center gap-6 py-10">
-      <h1 className="mb-2 text-center text-3xl">Add invoice</h1>
+    <div className="flex w-[270px] flex-col items-center gap-6 px-4 py-10 md:w-[322px]">
+      <h1 className="mb-2 text-center text-3xl md:text-4xl">Add invoice</h1>
 
-      <div className="flex w-full flex-col gap-4">
+      <div className="flex w-full flex-col gap-4 md:w-[322px]">
         <CustomInput
           id="clientName"
           label="Client name"
@@ -61,7 +61,7 @@ export default function AddInvoicePage() {
       </div>
 
       {/* Notes Section */}
-      <div className="flex w-full flex-col items-center rounded-3xl border-2 border-chill-black bg-light-green p-4">
+      <div className="flex w-full flex-col items-center rounded-3xl border-2 border-chill-black bg-light-green p-4 md:w-[322px]">
         <h3 className="mb-3 text-sm font-semibold text-chill-black">Notes</h3>
         
         <textarea
@@ -90,7 +90,7 @@ export default function AddInvoicePage() {
       {/* Automate checkbox */}
       <div
         onClick={() => setAutomate(!automate)}
-        className="flex h-12 w-full items-center rounded-full border-2 border-chill-black bg-light-green px-4"
+        className="flex h-12 w-full items-center rounded-full border-2 border-chill-black bg-light-green px-4 md:w-[322px]"
       >
         <div className="mr-3 flex h-4 w-4 items-center justify-center rounded-full border border-chill-black ">
           {automate && <div className="h-2 w-2 rounded-full bg-chill-black"></div>}
@@ -99,16 +99,16 @@ export default function AddInvoicePage() {
       </div>
 
       {/* Action Buttons */}
-      <div className="mt-2 flex w-full flex-col gap-4">
+      <div className="mt-2 flex w-full flex-col gap-4 md:w-[322px]">
         <button
           type="button"
-          className="h-12 w-full rounded-full border-2 border-chill-black bg-calm-green font-clash text-sm font-medium text-light-green transition-transform hover:-translate-y-0.5 hover:shadow-[2px_2px_0_0_var(--color-chill-black)]"
+          className="h-12 w-full! rounded-full border-2 border-chill-black bg-calm-green font-clash text-sm font-medium text-light-green transition-transform hover:-translate-y-0.5 hover:shadow-[2px_2px_0_0_var(--color-chill-black)] md:w-52"
         >
           Submit
         </button>
         <button
           type="button"
-          className="h-12 w-full rounded-full border-2 border-chill-black bg-[#FFFBF4] font-clash text-sm font-medium text-chill-black transition-transform hover:-translate-y-0.5 hover:shadow-[2px_2px_0_0_var(--color-chill-black)]"
+          className="h-12 w-full! rounded-full border-2 border-chill-black bg-[#FFFBF4] font-clash text-sm font-medium text-chill-black transition-transform hover:-translate-y-0.5 hover:shadow-[2px_2px_0_0_var(--color-chill-black)] md:w-52"
         >
           No, go back
         </button>

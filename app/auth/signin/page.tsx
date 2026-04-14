@@ -11,9 +11,9 @@ const SignInPage = () => {
 
   return (
     <>
-      <h1 className="w-[270px] text-center">Sign In</h1>
+      <h1 className="w-[270px] text-center md:w-[322px]">Sign In</h1>
 
-      <div className="w-[270px] flex flex-col justify-center gap-5">
+      <div className="w-[270px] flex flex-col justify-center gap-5 md:w-[322px]">
         <CustomInput
           id="email"
           label="Email"
@@ -37,7 +37,7 @@ const SignInPage = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-5">
-      <button className="w-[270px] bg-calm-green text-light-green" type="button">
+      <button className="w-[270px] bg-calm-green text-light-green md:w-[322px]" type="button">
         Sign In
       </button>
       <MiniLink href="/auth/signup" text="Don't have an account? Sign up" />

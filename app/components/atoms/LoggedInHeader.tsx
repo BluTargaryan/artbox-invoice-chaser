@@ -6,7 +6,7 @@ import NotificationDropdown from "./NotificationDropdown";
 
 const LoggedInHeader = () => {
   return (
-    <header className="absolute left-0 right-0 top-0 flex shrink-0 items-center justify-between bg-light-almond px-3 py-6 z-50">
+    <header className="absolute left-0 right-0 top-0 flex shrink-0 items-center justify-between bg-light-almond px-3 py-6 z-50 md:px-10">
       <Link href="/" className="flex items-center gap-2">
         <Image
           src={logo}
@@ -20,7 +20,7 @@ const LoggedInHeader = () => {
         </span>
       </Link>
 
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1 md:gap-5">
         <NotificationDropdown />
 
         <div className="h-10 w-10 shrink-0 rounded-full border-2 border-chill-black bg-tan flex items-center justify-center">

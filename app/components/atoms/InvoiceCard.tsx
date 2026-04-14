@@ -14,12 +14,12 @@ export default function InvoiceCard({
   dateDisplay = "mm/dd/yy",
 }: InvoiceCardProps) {
   return (
-    <div className="base-shadow flex w-full flex-col rounded-xl border-2 border-chill-black bg-calm-green p-4">
-      <div className="mb-4 flex gap-2">
+    <div className="base-shadow flex w-full flex-col rounded-xl border-2 border-chill-black bg-calm-green px-4.5 py-8">
+      <div className="mb-4 flex gap-2 flex-wrap">
         {tags.map((tag, index) => (
           <span
             key={`${tag}-${index}`}
-            className="flex items-center justify-center rounded-bl-xl rounded-tr-xl border-2 border-chill-black bg-light-green px-4 py-1 text-[10px] font-medium text-chill-black"
+            className="flex items-center justify-center rounded-bl-2xl rounded-tr-2xl border-2 border-chill-black bg-light-green px-4 py-1 text-xs font-medium text-chill-black"
           >
             {tag}
           </span>
@@ -27,13 +27,13 @@ export default function InvoiceCard({
       </div>
 
       <div className="mb-4 flex flex-col rounded-xl border-2 border-chill-black bg-tan p-4">
-        <div className="mb-2 font-clash text-[22px] font-semibold tracking-wider text-light-almond [-webkit-text-stroke:1px_var(--color-chill-black)]">
+        <div className="outline-black mb-2 font-clash text-3xl font-semibold tracking-wider text-light-almond">
           {amountDisplay}
         </div>
-        <p className="font-satoshi text-sm font-medium text-chill-black">
+        <p className="font-medium text-chill-black">
           Name: {clientName}
         </p>
-        <p className="font-satoshi text-sm font-medium text-chill-black">
+        <p className="font-medium text-chill-black">
           Date: {dateDisplay}
         </p>
       </div>

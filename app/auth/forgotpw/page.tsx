@@ -3,15 +3,14 @@
 import React, { useState } from "react";
 import CustomInput from "@/app/components/atoms/CustomInput";
 import MiniLink from "@/app/components/atoms/MiniLink";
-import Link from "next/link";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
   return (
     <>
-      <h1 className="w-[270px] text-center">Forgot Password</h1>
+      <h1 className="w-[270px] text-center md:w-[322px]">Forgot Password</h1>
 
-      <div className="w-[270px] flex flex-col justify-center gap-5">
+      <div className="w-[270px] flex flex-col justify-center gap-5 md:w-[322px]">
         <CustomInput
           id="email"
           label="Email"
@@ -26,7 +25,7 @@ export default function ForgotPasswordPage() {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-5">
-      <button className="w-[270px] bg-calm-green text-light-green">
+      <button className="w-[270px] bg-calm-green text-light-green md:w-[322px]">
         Send Reset Link
       </button>
       <MiniLink href="/auth/signin" text="Remember your password? Sign in" />
