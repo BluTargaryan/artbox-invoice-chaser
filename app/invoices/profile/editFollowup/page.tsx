@@ -28,9 +28,9 @@ const EditFollowupPage = () => {
 
   return (
     <>
-      <h1 className="w-[270px] text-center">Edit followup rules</h1>
+      <h1 className="w-[270px] text-center md:w-[322px]">Edit followup rules</h1>
 
-      <div className="flex w-[270px] flex-col justify-center gap-10 py-4">
+      <div className="flex w-[270px] flex-col justify-center gap-10 py-4 md:w-[322px]">
         {/* Existing Rules */}
 
         <div className="flex flex-col gap-4">
@@ -91,7 +91,7 @@ const EditFollowupPage = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-5 mt-4">
-        <button className="w-[270px] bg-calm-green text-light-green" type="button">
+        <button className="w-[270px] bg-calm-green text-light-green md:w-[322px]" type="button">
           Save changes
         </button>
         <Link
