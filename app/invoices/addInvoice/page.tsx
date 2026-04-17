@@ -62,7 +62,7 @@ export default function AddInvoicePage() {
 
       {/* Notes Section */}
       <div className="flex w-full flex-col items-center rounded-3xl border-2 border-chill-black bg-light-green p-4 md:w-[322px]">
-        <h3 className="mb-3 text-sm font-semibold text-chill-black">Notes</h3>
+        <h3 className="mb-3 text-sm font-semibold text-chill-black xl:text-base">Notes</h3>
         
         <textarea
           className="mb-4 h-24 w-full resize-none rounded-xl border-2 border-chill-black bg-light-green p-3 font-satoshi text-sm text-chill-black placeholder:text-chill-black focus:outline-none"

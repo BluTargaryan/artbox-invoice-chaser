@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const defaultInputClassName =
-  "w-full h-12 rounded-full border-2 border-calm-green px-4 bg-light-green text-center text-chill-black";
+  "w-full h-12 rounded-full border-2 border-calm-green px-4 bg-light-green text-center text-chill-black xl:text-xl xl:placeholder:text-xl xl:h-16";
 
 /** Types that use the default "pill" field look; others rely on `className` or native styling. */
 const USES_DEFAULT_FIELD_STYLES = new Set([
