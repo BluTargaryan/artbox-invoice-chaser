@@ -9,9 +9,9 @@ const ResetPasswordPage = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   return (
     <>
-      <h1 className="w-[270px] text-center md:w-[322px]">Reset Password</h1>
+      <h1 className="w-[270px] text-center md:w-[322px] xl:w-[446px]">Reset Password</h1>
 
-      <div className="flex w-[270px] flex-col justify-center gap-5 md:w-[322px]">
+      <div className="flex w-[270px] flex-col justify-center gap-5 md:w-[322px] xl:w-[446px]">
         <CustomInput
           id="password"
           label="Password"
@@ -35,13 +35,13 @@ const ResetPasswordPage = () => {
 
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-5">
-        <button className="w-[270px] bg-calm-green text-light-green md:w-[322px]" type="button">
+      <div className="flex flex-col items-center justify-center gap-5 xl:gap-8">
+        <button className="w-[270px] bg-calm-green text-light-green md:w-[322px] xl:w-[446px]" type="button">
           Reset Password
         </button>
         <Link
           href="/auth/signin"
-          className="border-b border-chill-black py-1 text-chill-black transition-all duration-300 hover:border-tan hover:text-tan"
+          className="border-b border-chill-black py-1 text-chill-black transition-all duration-300 hover:border-tan hover:text-tan xl:text-2xl!"
         >
           Remember your password? Sign in
         </Link>

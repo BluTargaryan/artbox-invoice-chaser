@@ -41,6 +41,8 @@ body {
 overflow-x: hidden;
 }
 
+@layer base {
+
 input {
   font-family: var(--font-satoshi);
   @apply text-chill-black;
@@ -61,7 +63,7 @@ h1,h2,h3,h4,h5,h6,label {
 
 label {
   letter-spacing: 0.07em;
-  @apply text-xl xl:text-2xl;
+  @apply text-xl xl:text-2xl!;
 }
 
 h1 {
@@ -81,7 +83,7 @@ button {
   font-family: var(--font-clash);
   cursor: pointer;
   font-weight: 500;
-  @apply h-12 rounded-full  border-2 border-chill-black xl:h-16 xl:text-xl;
+  @apply h-12 rounded-full  border-2 border-chill-black xl:h-16 xl:text-2xl!;
   transition: box-shadow 0.3s ease-in, transform 0.3s ease-in;
 }
 
@@ -89,6 +91,11 @@ button:hover {
   box-shadow: 3px 3px 0 0 var(--color-chill-black);
   transform: translate(-3px, -3px);
   
+}
+
+p{
+  @apply text-base xl:text-2xl!;
+}
 }
 
 .base-shadow{

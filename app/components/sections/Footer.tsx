@@ -11,7 +11,9 @@ const Footer = () => {
         <Image src={logo} alt="Invoice Chaser logo" width={100} height={100} className="w-8 h-auto" />
         <span className="font-semibold  uppercase leading-none w-16 font-clash">Invoice Chaser</span>
         </Link>
-            <span className="text-sm">An Artbox affiliate creation</span>
+      <a href="https://artbox-studio.com" target="_blank" rel="noopener noreferrer" className="hover:underline">
+            <span className="text-sm xl:text-base">An Artbox affiliate creation</span>
+            </a>
         </div>
     </footer>
   )

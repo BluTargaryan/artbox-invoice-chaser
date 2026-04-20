@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const defaultInputClassName =
-  "w-full h-12 rounded-full border-2 border-calm-green px-4 bg-light-green text-center text-chill-black xl:text-xl xl:placeholder:text-xl xl:h-16";
+  "w-full h-12 rounded-full border-2 border-calm-green px-4 bg-light-green text-center text-chill-black xl:text-2xl xl:placeholder:text-2xl xl:h-16";
 
 /** Types that use the default "pill" field look; others rely on `className` or native styling. */
 const USES_DEFAULT_FIELD_STYLES = new Set([
@@ -41,7 +41,7 @@ export type CustomInputProps = {
 export default function CustomInput({
   label,
   placeholder = label,
-  containerClassName = "flex flex-col items-center justify-center gap-2",
+  containerClassName = "flex flex-col items-center justify-center gap-2 xl:gap-4",
   className,
   id,
   type = "text",
@@ -161,7 +161,7 @@ export default function CustomInput({
               {options?.map((opt) => (
                 <li
                   key={opt.value}
-                  className={`cursor-pointer px-6 py-4.5 text-center transition-colors hover:bg-calm-green hover:text-light-green ${
+                  className={`cursor-pointer px-6 py-4.5 text-center transition-colors hover:bg-calm-green hover:text-light-green xl:text-2xl! ${
                     opt.value === currentSelectValue ? "bg-calm-green text-light-green" : ""
                   }`}
                   onClick={() => {

@@ -36,7 +36,7 @@ const SignInPage = () => {
         />
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-5">
+      <div className="flex flex-col items-center justify-center gap-5 xl:gap-8">
       <button className="w-[270px] bg-calm-green text-light-green md:w-[322px] xl:w-[446px]" type="button">
         Sign In
       </button>
