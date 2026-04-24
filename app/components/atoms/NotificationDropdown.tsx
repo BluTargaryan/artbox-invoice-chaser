@@ -29,7 +29,7 @@ const NotificationDropdown = () => {
       <button
         type="button"
         className="flex shadow-none! transform-none! h-10 items-center gap-2 rounded-full border-2 border-chill-black bg-calm-green px-4 text-xs text-light-almond 
-        md:text-base
+        md:text-base xl:px-5
         "
         onClick={() => setDropdownOpen((o) => !o)}
       >

@@ -56,6 +56,16 @@ input:focus {
   @apply outline-none;
 }
 
+/* Hide number input spinners in all browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 h1,h2,h3,h4,h5,h6,label {
   font-family: var(--font-clash);
   @apply text-calm-green tracking-tight;
@@ -83,7 +93,7 @@ button {
   font-family: var(--font-clash);
   cursor: pointer;
   font-weight: 500;
-  @apply h-12 rounded-full  border-2 border-chill-black xl:h-16 xl:text-2xl!;
+  @apply h-12 rounded-full border-2 border-chill-black text-sm xl:h-16 xl:text-base!;
   transition: box-shadow 0.3s ease-in, transform 0.3s ease-in;
 }
 

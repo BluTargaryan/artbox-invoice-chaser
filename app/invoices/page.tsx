@@ -3,7 +3,7 @@ import InvoiceCard from "@/app/components/atoms/InvoiceCard";
 
 export default function InvoicesPage() {
   return (
-    <div className="flex w-full max-w-[350px] flex-col gap-8 px-4 md:max-w-full md:px-10">
+    <div className="flex w-full max-w-[350px] flex-col gap-8 px-4 md:max-w-full md:px-10 xl:gap-10">
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <h1>Invoices</h1>
@@ -19,16 +19,16 @@ export default function InvoicesPage() {
       flex-wrap
       md:w-fit md:rounded-full
       ">
-        <button className="h-9 rounded-full bg-light-almond px-4 text-sm font-medium text-chill-black">
+        <button className="h-9 rounded-full bg-light-almond px-4 text-sm font-medium text-chill-black xl:h-12">
           Due
         </button>
-        <button className="h-9 px-3 text-sm font-medium text-light-almond">
+        <button className="h-9 px-3 text-sm font-medium text-light-almond xl:h-12">
           Overdue
         </button>
-        <button className="h-9 px-3 text-sm font-medium text-light-almond">
+        <button className="h-9 px-3 text-sm font-medium text-light-almond xl:h-12">
           Paid
         </button>
-        <button className="h-9 px-3 text-sm font-medium text-light-almond">
+        <button className="h-9 px-3 text-sm font-medium text-light-almond xl:h-12">
           Archived
         </button>
       </div>

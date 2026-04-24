@@ -19,15 +19,17 @@ export default function InvoiceCard({
         {tags.map((tag, index) => (
           <span
             key={`${tag}-${index}`}
-            className="flex items-center justify-center rounded-bl-2xl rounded-tr-2xl border-2 border-chill-black bg-light-green px-4 py-1 text-xs font-medium text-chill-black"
+            className="flex items-center justify-center rounded-bl-2xl rounded-tr-2xl border-2 border-chill-black bg-light-green px-4 py-1 text-xs font-medium text-chill-black
+            xl:text-base
+            "
           >
             {tag}
           </span>
         ))}
       </div>
 
-      <div className="mb-4 flex flex-col rounded-xl border-2 border-chill-black bg-tan p-4">
-        <div className="outline-black mb-2 font-clash text-3xl font-semibold tracking-wider text-light-almond">
+      <div className="mb-4 flex flex-col rounded-xl border-2 border-chill-black bg-tan p-4 base-shadow">
+        <div className="outline-black mb-2 font-clash text-3xl font-semibold tracking-wider text-light-almond xl:text-4xl xl:mb-3">
           {amountDisplay}
         </div>
         <p className="font-medium text-chill-black">

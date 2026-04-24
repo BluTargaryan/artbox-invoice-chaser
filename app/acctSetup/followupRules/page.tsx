@@ -28,27 +28,29 @@ const FollowupRulesPage = () => {
       <div className="flex w-[270px] flex-col justify-center gap-10 py-4 md:w-[322px] xl:w-[446px]">
         {/* Existing Rule Block */}
         <div className="flex flex-col gap-4">
-        <div className="relative flex h-12 w-full items-center border-2 border-chill-black bg-calm-green px-4">
+        <div className="relative flex h-12 w-full items-center border-2 border-chill-black bg-calm-green px-4 xl:h-16">
           <div className="absolute bottom-0 left-0 top-0 w-2 border-r-2 border-chill-black bg-tan"></div>
-          <span className="ml-2 font-satoshi text-sm text-light-almond">Rule</span>
-          <span className="ml-auto font-satoshi text-xs text-light-almond">X days before</span>
+          <span className="ml-2 font-satoshi text-sm text-light-almond xl:text-2xl!">Rule</span>
+          <span className="ml-auto font-satoshi text-xs text-light-almond xl:text-2xl!">X days before</span>
         </div>
         </div>
 
         {/* New Rule Inputs */}
         <div className="flex flex-col gap-6">
           <div className="flex items-center justify-center gap-4">
-            <div className="w-12">
-              <CustomInput
-                id="days"
-                label=""
-                type="number"
-                placeholder="X"
-                className="px-0! text-center"
-                containerClassName=""
-                value={days}
-                onChange={(e) => setDays(e.target.value)}
-              />
+            <div className="w-12 xl:w-16">
+            <CustomInput
+  id="days"
+  label=""
+  type="text"
+  inputMode="numeric"
+  pattern="[0-9]*"
+  placeholder="X"
+  className="px-0! text-center"
+  containerClassName=""
+  value={days}
+  onChange={(e) => setDays(e.target.value)}
+/>
             </div>
             <div className="flex-1">
               <CustomInput
