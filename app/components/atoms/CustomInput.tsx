@@ -150,7 +150,7 @@ export default function CustomInput({
             className={`${selectTriggerClassName} flex items-center justify-between shadow-none! transform-none!`}
             onClick={() => setDropdownOpen((o) => !o)}
           >
-            <span className="flex-1 text-center">
+            <span className="flex-1 text-center xl:text-2xl! font-normal">
               {selectedLabel ?? (placeholder ?? label)}
             </span>
             <span className="ml-2 text-xs">{dropdownOpen ? "▲" : "▼"}</span>

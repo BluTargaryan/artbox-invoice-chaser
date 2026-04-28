@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import logo from "@/app/assets/images/logo.png";
 import NotificationDropdown from "./NotificationDropdown";
+import UserAvatarDropdown from "./UserAvatarDropdown";
 
 const LoggedInHeader = () => {
   return (
@@ -23,9 +24,7 @@ const LoggedInHeader = () => {
       <div className="flex items-center gap-1 md:gap-5">
         <NotificationDropdown />
 
-        <div className="h-10 w-10 shrink-0 rounded-full border-2 border-chill-black bg-tan flex items-center justify-center">
-          <span className="text-sm uppercase font-clash font-semibold text-center">MT</span>
-        </div>
+        <UserAvatarDropdown />
       </div>
     </header>
   );

@@ -28,14 +28,16 @@ function ProfileField({ label, value }: { label: string; value: string }) {
 export default function ProfilePage() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-12 px-4 md:max-w-5xl md:gap-16 md:px-8">
-      <h1 className="text-3xl md:text-4xl">Profile</h1>
+      <h1 className="">Profile</h1>
 
       <div className="flex flex-col gap-15 md:grid md:grid-cols-3 md:gap-12">
 {/* User details */}
-<section className="flex flex-col gap-4">
-        <h3>User details</h3>
-        <ProfileField label="Full name" value={user.fullName} />
-        <ProfileField label="Email" value={user.email} />
+      <section className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
+          <h3>User details</h3>
+          <ProfileField label="Full name" value={user.fullName} />
+          <ProfileField label="Email" value={user.email} />
+        </div>
         <Link href="/invoices/profile/editUser">
           <button
             type="button"
@@ -47,10 +49,12 @@ export default function ProfilePage() {
       </section>
 
       {/* Brand details */}
-      <section className="flex flex-col gap-4">
-        <h3>Brand details</h3>
-        <ProfileField label="Brand name" value={brand.name} />
-        <ProfileField label="Brand voice" value={brand.voice} />
+      <section className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
+          <h3>Brand details</h3>
+          <ProfileField label="Brand name" value={brand.name} />
+          <ProfileField label="Brand voice" value={brand.voice} />
+        </div>
         <Link href="/invoices/profile/editBrand">
           <button
             type="button"
@@ -62,11 +66,13 @@ export default function ProfilePage() {
       </section>
 
       {/* Followup rules */}
-      <section className="flex flex-col gap-4">
-        <h3>Followup rules</h3>
-        {followupRules.map((rule) => (
-          <ProfileField key={rule.timing} label={rule.timing} value={rule.action} />
-        ))}
+      <section className="flex flex-col gap-8">
+        <div className="flex flex-col gap-4">
+          <h3>Followup rules</h3>
+          {followupRules.map((rule) => (
+            <ProfileField key={rule.timing} label={rule.timing} value={rule.action} />
+          ))}
+        </div>
         <Link href="/invoices/profile/editFollowup">
           <button
             type="button"

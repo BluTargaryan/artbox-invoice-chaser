@@ -28,20 +28,20 @@ const EditFollowupPage = () => {
 
   return (
     <>
-      <h1 className="w-[270px] text-center md:w-[322px]">Edit followup rules</h1>
+      <h1 className="w-[270px] text-center md:w-[322px] xl:w-[446px]">Edit followup rules</h1>
 
-      <div className="flex w-[270px] flex-col justify-center gap-10 py-4 md:w-[322px]">
+      <div className="flex w-[270px] flex-col justify-center gap-10 py-4 md:w-[322px] xl:w-[446px]">
         {/* Existing Rules */}
 
         <div className="flex flex-col gap-4">
         {DUMMY_RULES.map((rule) => (
           <div
             key={rule.label}
-            className="relative flex h-12 w-full items-center border-2 border-chill-black bg-calm-green px-4"
+            className="relative flex h-12 w-full items-center border-2 border-chill-black bg-calm-green px-4 xl:h-16"
           >
-            <div className="absolute bottom-0 left-0 top-0 w-2 border-r-2 border-chill-black bg-tan"></div>
-            <span className="ml-2 font-satoshi text-sm text-light-almond">{rule.label}</span>
-            <span className="ml-auto font-satoshi text-xs text-light-almond">{rule.timing}</span>
+            <div className="absolute bottom-0 left-0 top-0 w-2 border-r-2 border-chill-black bg-tan "></div>
+            <span className="ml-2 font-satoshi text-sm text-light-almond xl:text-2xl!">{rule.label}</span>
+            <span className="ml-auto font-satoshi text-xs text-light-almond xl:text-2xl!">{rule.timing}</span>
           </div>
         ))}
         </div>
@@ -91,7 +91,7 @@ const EditFollowupPage = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-5 mt-4">
-        <button className="w-[270px] bg-calm-green text-light-green md:w-[322px]" type="button">
+        <button className="w-[270px] bg-calm-green text-light-green md:w-[322px] xl:w-[446px]" type="button">
           Save changes
         </button>
         <Link

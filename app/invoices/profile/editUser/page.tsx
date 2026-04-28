@@ -10,9 +10,9 @@ const EditUserPage = () => {
 
   return (
     <>
-      <h1 className="w-[270px] text-center md:w-[322px]">Edit profile</h1>
+      <h1 className="w-[270px] text-center md:w-[322px] xl:w-[446px]">Edit profile</h1>
 
-      <div className="flex w-[270px] flex-col justify-center gap-5 md:w-[322px]">
+      <div className="flex w-[270px] flex-col justify-center gap-5 md:w-[322px] xl:w-[446px]">
         <CustomInput
           id="fullName"
           label="Full name"
@@ -36,7 +36,7 @@ const EditUserPage = () => {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-5">
-        <button className="w-[270px] bg-calm-green text-light-green md:w-[322px]" type="button">
+        <button className="w-[270px] bg-calm-green text-light-green md:w-[322px] xl:w-[446px]" type="button">
           Save changes
         </button>
         <Link

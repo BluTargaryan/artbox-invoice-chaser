@@ -39,8 +39,10 @@ const NotificationDropdown = () => {
 
       {/* Dropdown Menu */}
       {dropdownOpen && (
-        <div className="absolute right-0 top-full mt-2 w-[240px] border border-chill-black bg-[#FFFBF4] shadow-md
+        <div className="absolute right-0 top-full mt-2 w-[240px] border border-chill-black bg-light-almond shadow-md
+        max-h-90vh overflow-y-scroll
         md:w-[350px]
+        xl:w-[800px]
         ">
           <ul className="flex flex-col">
             {notifications.map((text, idx) => (
