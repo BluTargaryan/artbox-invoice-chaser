@@ -1,0 +1,34 @@
+---
+description: Core architectural decisions for the Artbox Invoice Chaser project
+alwaysApply: true
+---
+
+# Architecture Decisions
+
+## Auth — Supabase handles everything on its platform
+
+All authentication logic is delegated to Supabase. Do not suggest or implement custom auth logic, custom JWT handling, or third-party auth libraries (e.g. NextAuth, Clerk, Firebase Auth).
+
+Supabase handles:
+- User sign up / sign in
+- Email verification and confirmation emails
+- Password reset emails and token handling
+- Session management and refresh tokens
+- OAuth providers (if added later)
+
+The app's responsibility is only:
+- Calling the appropriate Supabase client methods (`signUp`, `signInWithPassword`, `resetPasswordForEmail`, `updateUser`, etc.)
+- Reading session state from Supabase (`supabase.auth.getSession()`, `onAuthStateChange`)
+- Protecting routes via `middleware.ts` using the Supabase SSR client
+- Redirecting users post-auth to `/acctSetup` if setup is incomplete, or `/invoices` if fully set up
+
+Do not build or suggest custom email sending, token generation, or session storage — Supabase owns all of that.
+
+## Pending: Install Supabase MCP after auth flow is complete
+
+Once the auth flow is fully implemented, remind the user to install the Supabase MCP server in Cursor:
+- Go to Cursor Settings > MCP > Add
+- Search for and install `@supabase/mcp-server-supabase`
+- It will require a Supabase personal access token
+
+This is needed for database work (creating tables, running migrations, inspecting schema) that will come up when building the dashboard, invoice, and client flows.
